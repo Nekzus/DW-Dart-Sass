@@ -1,0 +1,53 @@
+// CUSTOM CAROUSEL
+@use '../utilities/mixins' as *;
+
+$animationSpeed: 40s;
+
+.slider {
+	background: white;
+	box-shadow: 0 10px 20px -5px var(--color-shadow);
+	height: 5rem;
+	margin: auto;
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+	opacity: 0.7;
+
+	&::before,
+	&::after {
+		@include white-gradient;
+		content: "";
+		height: 5rem;
+		position: absolute;
+		width: 12.5rem;
+		z-index: 2;
+	}
+
+	&::after {
+		right: 0;
+		top: 0;
+		transform: rotateZ(180deg);
+	}
+
+	&::before {
+		left: 0;
+		top: 0;
+	}
+
+	.slide-track {
+		animation: scroll $animationSpeed linear infinite;
+		display: flex;
+		width: calc(15.6rem * 14);
+	}
+
+	.slide {
+		display: flex;
+		align-items: center;
+		height: 5rem;
+		width: 15.6rem;
+
+		&__img {
+			height: 5rem;
+		}
+	}
+}

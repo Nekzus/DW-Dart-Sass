@@ -1,0 +1,70 @@
+// HEADER
+@use '../utilities/breakpoints' as *;
+
+.header {
+
+    &__title-site,
+    &__link {
+        color: var(--color-pink);
+        text-decoration: none;
+        &:hover {
+            color: var(--color-pink);
+        }
+    }
+
+    @include xs {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-image: linear-gradient(to left, var(--color-bg-primary), var(--color-bg-secondary));
+        padding: 0.625rem;
+        &__logo-site {
+            width: 15rem;
+            height: 15rem;
+        }
+        &__title-site {
+            display: none;
+            font-family: var(--font-primary);
+        }
+    }
+
+    @include sm {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas: "logo title title .";
+        justify-content: center;
+        align-content: center;
+        &__logo {
+            grid-area: logo;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+        }
+        &__logo-site {
+            width: 10rem;
+            height: 10rem;
+        }
+        &__title {
+            grid-area: title;
+            text-align: center;
+        }
+        &__title-site {
+            display: inline;
+            font-size: 2.5rem;
+        }
+        &__subtitle-site {
+            display: block;
+            background-image: linear-gradient(to right, var(--color-pink), var(--color-blue));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    }
+
+    @include md {
+        &__title-site {
+            font-size: 3.5rem;
+        }
+    }
+}

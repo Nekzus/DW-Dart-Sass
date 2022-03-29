@@ -1,0 +1,25 @@
+// RESET DE VALORES
+@use '../utilities/breakpoints' as *;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    @include xs {
+        font-size: 80%;
+    }
+
+    @include sm {
+        font-size: 100%;
+    }
+
+    @include breakpoint($bp: 3840px) {
+        font-size: 120%;
+    }
+
+    @include breakpoint($bp: 4000px) {
+        font-size: 150%;
+    }
+}

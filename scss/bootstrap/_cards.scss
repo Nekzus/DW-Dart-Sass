@@ -1,0 +1,49 @@
+@use '../utilities/mixins' as *;
+
+.card {
+    @include card;
+    .card-img-top {
+        width: 100%;
+        height: 15.625rem;
+        overflow: hidden;
+        object-fit: cover;
+        border-radius: 1rem 1rem 0 0;
+    }
+
+    .card-body {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1rem 3rem 1.875rem 2.6875rem;
+        gap: 0.5rem;
+        justify-content: center;
+        align-content: center;
+        place-items: center;
+    }
+
+    .card-manu {
+        text-transform: uppercase;
+        font-size: 0.98rem;
+        font-family: var(--font-tertiary);
+    }
+
+    .card-title {
+        font-size: 1.4rem;
+        margin-bottom: 0;
+    }
+
+    .card-text {
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: var(--color-green);
+        &--orig-price {
+            margin-left: 1rem;
+            text-decoration:line-through;
+            color: var(--color-font-primary);
+        }
+    }
+
+    &:hover {
+        box-shadow: 0.3125rem 0.3125rem 1.25rem var(--color-shadow);
+        transform: translateY(-3%);
+    }
+}

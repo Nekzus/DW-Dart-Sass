@@ -1,0 +1,30 @@
+// MULTIMEDIA
+@use '../utilities/breakpoints' as *;
+
+.video,
+.map {
+    &__iframe {
+        border-radius: 0.5rem;
+        box-shadow: 0.3125rem 0.3125rem 1.25rem var(--color-shadow);
+
+        @include xs {
+            width: 25.8rem;
+            height: 14.5rem;
+        }
+
+        @include sm {
+            width: 35.5rem;
+            height: 20rem;
+        }
+
+        @include md {
+            width: 45rem;
+            height: 25.5rem;
+        }
+
+        @include lg {
+            width: 57.5rem;
+            height: 32.3rem;
+        }
+    }
+}

@@ -1,0 +1,59 @@
+// OFFCANVAS CARRITO
+.offcanvas-header {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: 1fr;
+    grid-template-areas: " . title title title title title close";
+    justify-content: center;
+    align-content: center;
+    place-items: center;
+    background-color: var(--color-pink);
+    font-family: var(--font-primary);
+    color: var(--color-font-secondary);
+
+    &__btn-close {
+        grid-area: close;
+        justify-self: end;
+    }
+
+    &__title {
+        grid-area: title;
+    }
+}
+
+.offcanvas-body {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 2rem);
+    grid-template-areas:
+        "product product price price"
+        "separator separator separator separator"
+        "total total totalPrice totalPrice"
+        "btnBuy btnBuy btnBuy btnBuy";
+    justify-content: center;
+    align-content: flex-start;
+    justify-items: center;
+    align-items: center;
+    gap: 0.5rem;
+    background-image: linear-gradient(to bottom, var(--color-bg-primary), var(--color-bg-secondary));
+
+    &__btn-buy {
+        grid-area: btnBuy;
+    }
+
+    &__price {
+        grid-area: price;
+    }
+
+    &__product {
+        grid-area: product;
+    }
+
+    &__total {
+        grid-area: total;
+    }
+
+    &__total-price {
+        grid-area: totalPrice;
+    }
+}
